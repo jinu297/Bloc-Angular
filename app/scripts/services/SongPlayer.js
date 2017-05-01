@@ -3,12 +3,12 @@
         var SongPlayer = {};
 
         var currentSong = null;
-        
+
         /**
         * @desc Buzz object audio file
         * @type {Object}
         */
-        
+
         var currentBuzzObject = null;
 
         /**
@@ -50,6 +50,14 @@
             song.playing = false;
         };
 
+        /** This is where assignment 7 begins ***********************************/
+
+
+        SongPlayer.play = function(song) {
+            currentBuzzObject.play();
+            song.playing = true;
+        };
+
         return SongPlayer;
     }
 
@@ -57,3 +65,7 @@
         .module('blocJams')
         .factory('SongPlayer', SongPlayer);
 })();
+
+
+
+
