@@ -11,6 +11,12 @@
 
         var currentBuzzObject = null;
 
+        var stopSong = function(song){
+            song = song || SongPlayer.currentSong;
+            currentBuzzObject.stop();
+            song.playing = null;
+        };
+
         /**
         * @function setSong
         * @desc Stops currently playing song and loads new audio file as currentBuzzObject
@@ -74,6 +80,13 @@
             setSong(song);
             playSong(song);
         }
+
+        SongPlayer.next = function(){
+            var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+            currentSongIndex++;
+        };
+
+
 
         /** This is where assignment 7 begins ***********************************/
 
